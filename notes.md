@@ -160,6 +160,13 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
 - Cannot use ":="
 
 ## Programming constructs
-### if else
-### switch case
-### for
+- if else
+- switch case
+- for
+
+## Functions
+- Named results
+- Variadic functions
+- Anonymous functions
+- Higher Order functions
+- Deferred functions
