@@ -101,3 +101,11 @@ GOOS=<target_os> GOARCH=<target_processor_arch> go build <filename.go>
 # ex
 GOOS=windows GOARCH=amd64 go build 01-hello-world.go
 ```
+
+##### In windows (powershell)
+```powershell
+$env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
+```
+
+## Standard Library documentation
+- https://pkg.go.dev/std
