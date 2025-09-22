@@ -20,5 +20,38 @@
 - Any Editor (Visual Studio Code)
 - Go Tools (https://go.dev/dl)
 
+### Go Tools installation verification
+```shell
+go version
+```
+
 ## Repository
 - https://github.com/tkmagesh/cisco-gofoundation-sep-2025
+
+## Why Go?
+1. Simplicity
+    - ONLY 25 keywords
+        - package, import, func, var, const, if, else, switch, case, default, for, range, return, go, select, break, continue, goto, type
+    - No access modifiers (public/private/protected)
+    - No reference types (everything is a value) 
+    - No classes (only structs)
+    - No inheritance (only composition)
+    - No exceptions (only errors)
+    - No try-catch-finally construct
+    - No implicity type conversion
+2. Performance
+    - compiled to native code
+        - tooling support for cross compilation
+    - on par with c++
+3. Concurrency
+    - Cheaper & lighter alternative to OS Threads called `goroutines`
+    - OS Threads = ~2MB, Goroutines = ~2KB
+    - Support for concurrency is **built in the language**
+        - `go` keyword
+        - `chan` datatype
+        - `<-` operator
+        - `range` construct
+        - `select-case` construct
+    - API support
+        - `sync` package
+        - `sync/atomic` package
