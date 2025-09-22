@@ -55,3 +55,17 @@ go version
     - API support
         - `sync` package
         - `sync/atomic` package
+
+## Compilation & Execution
+### Compilation
+```shell
+go build <filename.go>
+```
+
+```shell
+go build -o <binary-name> <filename.go>
+```
+### Compile & Execute
+```shell
+go run <filename.go>
+```
