@@ -171,5 +171,8 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
     - functions defined in another functions
     - cannot have a name
     - they have to be used
-- Higher Order functions
+- Higher Order functions (treating functions like data)
+    - assign a function as a value to a variable
+    - pass function as an argument to other function
+    - return a function as a return value
 - Deferred functions
