@@ -78,4 +78,11 @@ func main() {
 	case "FREE":
 		fmt.Println("[FREE] : Listen to music!")
 	}
+
+	switch x := 3; x {
+	case 1, 2, 3, 4:
+		fmt.Println("x is <= 4 and >= 1")
+	case 5, 6, 7, 8:
+		fmt.Println("x is <= 8 and >= 5")
+	}
 }
