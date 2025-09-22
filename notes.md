@@ -158,3 +158,8 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
 ### Package Scope
 - Can have unused variables
 - Cannot use ":="
+
+## Programming constructs
+### if else
+### switch case
+### for
