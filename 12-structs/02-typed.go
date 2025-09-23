@@ -4,27 +4,21 @@ import "fmt"
 
 // product = id, name, cost
 
+type Product struct {
+	id   int
+	name string
+	cost float64
+}
+
 func main() {
 	/*
-		var p struct {
-			id   int
-			name string
-			cost float64
-		}
+		var p Product
 		p.id = 100
 		p.name = "Pen"
 		p.cost = 10
 	*/
 	/*
-		var p struct {
-			id   int
-			name string
-			cost float64
-		} = struct {
-			id   int
-			name string
-			cost float64
-		}{
+		var p Product = Product {
 			id:   100,
 			name: "pen",
 			cost: 10,
@@ -33,11 +27,7 @@ func main() {
 
 	// type inference
 	/*
-		var p = struct {
-			id   int
-			name string
-			cost float64
-		}{
+		var p = Product {
 			id:   100,
 			name: "pen",
 			cost: 10,
@@ -45,11 +35,7 @@ func main() {
 	*/
 
 	// using :=
-	p := struct {
-		id   int
-		name string
-		cost float64
-	}{
+	p := Product{
 		id:   100,
 		name: "pen",
 		cost: 10,
@@ -60,18 +46,14 @@ func main() {
 
 	// create a copy
 	/*
-		var p2 struct{ id  int; name  string; cost  float64;}
+		var p2 Product
 		p2 = p
 		p.cost = 12
 		fmt.Printf("p.cost = %f, p2.cost = %f\n", p.cost, p2.cost)
 	*/
 
 	// use pointers to create references
-	var p2 *struct {
-		id   int
-		name string
-		cost float64
-	}
+	var p2 *Product
 	p2 = &p
 	p.cost = 12
 	fmt.Printf("p.cost = %f, p2.cost = %f\n", p.cost, p2.cost)
@@ -81,18 +63,10 @@ func main() {
 	fmt.Println("After applying discount, p => ", format(p))
 }
 
-func format(product struct {
-	id   int
-	name string
-	cost float64
-}) string {
+func format(product Product) string {
 	return fmt.Sprintf("Id = %d, Name = %q, Cost = %0.2f", product.id, product.name, product.cost)
 }
 
-func applyDiscount(product *struct {
-	id   int
-	name string
-	cost float64
-}, discountPercent float64) { // no return values
+func applyDiscount(product *Product, discountPercent float64) { // no return values
 	product.cost = product.cost * ((100 - discountPercent) / 100)
 }
