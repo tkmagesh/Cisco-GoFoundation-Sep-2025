@@ -197,3 +197,13 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
     - errors.New()
     - fmt.Errorf()
     - Custom type implementing `error` interface
+
+## Panic & Recovery
+### Panic
+- Represents the state of the application where the application execution is unable to proceed further
+- When panic occurs, the application is shutdown **after all the scheduled deferred functions are executed**
+- Use **panic()** to programmatically create and raise a panic
+
+### Recovery
+- Use **recover()** to recover from the panic
+- Apt to be used in the `deferred` functions
