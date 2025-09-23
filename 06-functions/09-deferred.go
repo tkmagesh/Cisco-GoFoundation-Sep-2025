@@ -24,6 +24,18 @@ func f1() {
 		}()
 	*/
 
+	x := 10
+	/*
+		defer func() {
+			fmt.Println("x :", x)
+		}()
+	*/
+
+	defer func(no int) {
+		fmt.Println("x :", no)
+	}(x)
+	x = 20
+
 	defer fmt.Println("	[f1] deferred.. - (1)!")
 	defer fmt.Println("	[f1] deferred.. - (2)!")
 	defer fmt.Println("	[f1] deferred.. - (3)!")
