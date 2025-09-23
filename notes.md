@@ -207,3 +207,35 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
 ### Recovery
 - Use **recover()** to recover from the panic
 - Apt to be used in the `deferred` functions
+
+## Modules & Packages
+### Module
+- Any code that need to be versioned and deployed together
+- A module is just a folder with `go.mod` file
+- **go.mod** file
+    - the manifest for the module
+    - contains the following
+        - name of the module
+            - Good to have the complete repo path in the module name
+        - go version
+        - references to external dependencies
+- create a go.mod file
+```shell
+go mod init <module-name>
+```
+- run a module
+```shell
+go run .
+```
+- create a build of a module
+```shell
+go build .
+```
+
+### Package
+- internal organization of code in a module
+- just folders
+- can have any number of .go files
+- All the code in all the .go files of a package are considered to be part of the same package (ie., files loose their identity)
+- Public entities name MUST start with upper case
+- Private entities name MUST start with lower case
