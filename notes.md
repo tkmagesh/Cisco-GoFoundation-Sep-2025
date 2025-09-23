@@ -273,3 +273,5 @@ go get -u <package>
 # to upgrade all the dependencies
 go get -u
 ```
+
+## Structs
