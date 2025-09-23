@@ -179,5 +179,11 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
 
 ## Collection
 - Array
+    - Fixed sized typed collection
 - Slice
+    - Varying sized typed collection
+    - A pointer to an internal array
+    - Functions
+        - append()
+        - len()
 - Map

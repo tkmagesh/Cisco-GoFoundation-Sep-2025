@@ -38,12 +38,16 @@ func main() {
 	fmt.Println((*nos2)[0], nos2[0]) // accessing the memory of a pointer to an array doesn't require dereferencing
 
 	fmt.Printf("Before sorting, nos = %v\n", nos)
-	sort( /* ? */ )
+	sort(&nos)
 	fmt.Printf("After sorting, nos = %v\n", nos)
 }
 
-func sort( /* nos */ ) { // no return results
-	/*
-		use bubble sort
-	*/
+func sort(list *[5]int) { // no return results
+	for i := 0; i < 4; i++ {
+		for j := i + 1; j < 5; j++ {
+			if list[i] > list[j] {
+				list[i], list[j] = list[j], list[i]
+			}
+		}
+	}
 }
