@@ -32,7 +32,6 @@ func getWordsCountBySize(words []string) map[int]int {
 }
 
 func getMaxCountBySize(wordsCountBySize map[int]int) (maxCount, maxSize int) {
-
 	for size, count := range wordsCountBySize {
 		if count > maxCount {
 			maxCount, maxSize = count, size

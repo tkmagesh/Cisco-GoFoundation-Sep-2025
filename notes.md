@@ -188,3 +188,12 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
         - len()
 - Map
     - Varying sized typed collection of key/value pairs
+
+## Error Handling
+### Errors
+- Values `returned` from a function
+- Should implement `error` interface (best practice)
+- Creation
+    - errors.New()
+    - fmt.Errorf()
+    - Custom type implementing `error` interface
