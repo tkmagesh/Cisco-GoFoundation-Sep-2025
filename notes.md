@@ -239,3 +239,37 @@ go build .
 - All the code in all the .go files of a package are considered to be part of the same package (ie., files loose their identity)
 - Public entities name MUST start with upper case
 - Private entities name MUST start with lower case
+
+### Using 3rd party Open Source packages
+
+#### To install and add reference in go.mod file
+```shell
+go get <package>
+# ex
+go get github.com/fatih/color
+```
+
+The dependencies are downloaded to the module cache ($GOPATH/pkg)
+
+#### To update the go.mod file 
+```shell
+go mod tidy
+```
+
+#### To only download the dependencies referenced in the go.mod file
+```shell
+go mod download
+```
+
+#### To localize the dependencies source code in the application folder
+```shell
+go mod vendor
+```
+
+#### To upgrade the dependenices to the latest version
+```shell
+go get -u <package>
+
+# to upgrade all the dependencies
+go get -u
+```
