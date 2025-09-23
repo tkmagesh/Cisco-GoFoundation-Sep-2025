@@ -24,8 +24,6 @@ Build an interactive calculator
 		print "Invalid choice"
 		DISPLAY THE MENU again
 */
-
-/* Refactor the solution using functions. Make sure that each function has ONLY ONE reason to change (SRP) */
 func main() {
 
 }
