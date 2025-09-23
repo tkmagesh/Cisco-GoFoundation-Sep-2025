@@ -187,3 +187,4 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
         - append()
         - len()
 - Map
+    - Varying sized typed collection of key/value pairs
