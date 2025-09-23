@@ -176,3 +176,8 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o myapp-windows-amd64.exe
     - pass function as an argument to other function
     - return a function as a return value
 - Deferred functions
+
+## Collection
+- Array
+- Slice
+- Map
