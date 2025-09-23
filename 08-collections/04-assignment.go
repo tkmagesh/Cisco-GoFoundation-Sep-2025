@@ -13,11 +13,20 @@ func main() {
 	var start, end int
 	fmt.Println("Enter the start and end :")
 	fmt.Scanln(&start, &end)
-	primeNos := generatePrimes( /* ? */ )
-	// print the primeNos one after another
+	primeNos := generatePrimes(start, end)
+	for _, primeNo := range primeNos {
+		fmt.Printf("Prime No : %d\n", primeNo)
+	}
 }
 
-func generatePrimes( /*   */ ) { // return the list of generated prime numbers
+func generatePrimes(start, end int) []int {
+	var primes []int
+	for no := start; no <= end; no++ {
+		if isPrime(no) {
+			primes = append(primes, no)
+		}
+	}
+	return primes
 }
 
 func isPrime(no int) bool {
