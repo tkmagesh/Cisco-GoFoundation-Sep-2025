@@ -61,6 +61,14 @@ func main() {
 	fmt.Println("Before applying discount, p => ", format(p))
 	applyDiscount(&p, 10) // apply 10% discount
 	fmt.Println("After applying discount, p => ", format(p))
+
+	var x *Product = &Product{}
+	fmt.Println(x)
+
+	var y *Product = new(Product)
+	fmt.Println(y)
+
+	fmt.Println(new(int))
 }
 
 func format(product Product) string {
