@@ -1,21 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 /* process the numbers concurrently */
 
 func main() {
 	var start, end int
+	wg := &sync.WaitGroup{}
 	fmt.Println("Enter start and end:")
 	fmt.Scanln(&start, &end)
-LOOP:
+
 	for no := start; no <= end; no++ {
-		for i := 2; i <= (no / 2); i++ {
-			if no%i == 0 {
-				continue LOOP
-			}
-		}
-		fmt.Println("Prime No :", no)
+		wg.Add(1)
+		go checkAndPrintPrime(no, wg)
 	}
+	wg.Wait()
 	fmt.Println("Done!")
+}
+
+func checkAndPrintPrime(no int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for i := 2; i <= (no / 2); i++ {
+		if no%i == 0 {
+			return
+		}
+	}
+	fmt.Println("Prime No :", no)
 }
