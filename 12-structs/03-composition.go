@@ -45,6 +45,10 @@ func main() {
 
 	// use the format and applyDiscount on "rice" and print before and after
 
+	fmt.Println("Before applying discount, rice =>", format(rice.Product))
+	applyDiscount(&(rice.Product), 10)
+	fmt.Println("After applying discount, rice =>", format(rice.Product))
+
 }
 
 func format(product Product) string {
