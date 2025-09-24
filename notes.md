@@ -289,3 +289,34 @@ go run --race <program>
 # build
 go build --race <program>
 ```
+
+### Using Channels for communicating between goroutines
+#### Declaration
+```go
+var <var_name> chan <data_type>
+// ex:
+var ch chan int
+```
+#### Intialization
+```go
+<var_name> = make(chan <data_type>)
+// ex:
+ch = make(chan int)
+```
+#### Declaration & Initialization
+```go
+var ch chan int = make(chan int)
+// OR
+var ch = make(chan int)
+// OR
+ch := make(chan int)
+```
+#### Operations (using <- operator)
+##### Send Operation
+```go
+ch <- 100
+```
+##### Receive Operation
+```go
+data := <-ch
+```
