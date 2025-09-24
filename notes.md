@@ -275,3 +275,8 @@ go get -u
 ```
 
 ## Structs
+
+## Concurrency
+### sync.WaitGroup
+- Semaphore based counter
+- Has the ability to block the execution of a function until the counter becomes 0
