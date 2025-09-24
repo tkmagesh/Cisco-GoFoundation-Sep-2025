@@ -280,3 +280,12 @@ go get -u
 ### sync.WaitGroup
 - Semaphore based counter
 - Has the ability to block the execution of a function until the counter becomes 0
+
+### Data Race
+#### To detect data races
+```shell
+go run --race <program>
+
+# build
+go build --race <program>
+```
