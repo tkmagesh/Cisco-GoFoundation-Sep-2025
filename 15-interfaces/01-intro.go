@@ -21,7 +21,7 @@ type Rectangle struct {
 }
 
 func (r Rectangle) Area() float64 {
-	return 2 * (r.Height + r.Width)
+	return r.Height * r.Width
 }
 
 /*
@@ -63,31 +63,70 @@ func (s Square) Area() float64 {
 
 // ver 4.0
 
-func PrintPerimeter(?){
-	fmt.Println("Perimeter :", ?)
+func (c Circle) Perimeter() float64 {
+	return 2 * math.Pi * c.Radius
 }
 
-/* 
+func (r Rectangle) Perimeter() float64 {
+	return 2 * (r.Width + r.Height)
+}
+
+func (s Square) Perimeter() float64 {
+	return 4 * s.Side
+}
+
+func PrintPerimeter(x interface{ Perimeter() float64 }) {
+	fmt.Println("Perimeter :", x.Perimeter())
+}
+
+/*
 permeter formula
 circle = 2 * pi * r
 rectangle = 2 * (h + w)
 square = 4 * side
 */
 
+// ver 5.0
+
+func PrintStats(x interface {
+	interface{ Area() float64 }
+	interface{ Perimeter() float64 }
+}) {
+	PrintArea(x)      // x should interface{ Area() float64 }
+	PrintPerimeter(x) // x should interface{ Perimeter() float64 }
+}
+
+/*
+func PrintStats(x interface {
+	Area() float64
+	Perimeter() float64
+}) {
+	PrintArea(x)      // x should interface{ Area() float64 }
+	PrintPerimeter(x) // x should interface{ Perimeter() float64 }
+}
+*/
+
 func main() {
 	c := Circle{Radius: 12}
 	// fmt.Println("Area :", c.Area())
-	PrintArea(c)
-	PrintPerimeter(c)
+	/*
+		PrintArea(c)
+		PrintPerimeter(c)
+	*/
+	PrintStats(c)
 
 	r := Rectangle{Height: 12, Width: 14}
 	// fmt.Println("Area :", r.Area())
-	PrintArea(r)
-	PrintPerimeter(r)
-
-	// PrintArea(100)
+	/*
+		PrintArea(r)
+		PrintPerimeter(r)
+	*/
+	PrintStats(r)
 
 	s := Square{Side: 16}
-	PrintArea(s)
-	PrintPerimeter(s)
+	/*
+		PrintArea(s)
+		PrintPerimeter(s)
+	*/
+	PrintStats(s)
 }
